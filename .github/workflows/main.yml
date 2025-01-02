@@ -39,7 +39,7 @@ jobs:
       - uses: pozetroninc/github-action-get-latest-release@v0.6.0
         id: latest-tag
         with:
-          repository: cups/cups
+          repository: olbat/cups
           
       - name: Login to Docker Hub
         uses: docker/login-action@v1
