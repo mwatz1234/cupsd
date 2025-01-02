@@ -9,7 +9,7 @@ Below is an docker compose example.
 ```
 services:
   cups:
-    image: mwatz/cups:latest # admin user/password: admin/admin
+    image: mwatz/cups:latest # admin user/password: print/print
     container_name: cups
     privileged: true
     volumes:
