@@ -63,10 +63,9 @@ RUN useradd \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
 # Copy the default configuration file
-RUN mkdir /temp
-ADD cupsd.conf /temp
-COPY --chown=root:lp /temp/cupsd.conf /etc/cups/
-# Create the printer file if it does not exist.
+ADD stuff /temp
+RUN /bin/bash /temp/install.sh \
+    && rm -f /temp/install.sh
 
 # Default shell
 CMD ["/usr/sbin/cupsd", "-f"]
